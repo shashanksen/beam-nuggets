@@ -454,7 +454,8 @@ def _columns_from_sample_record(record, primary_key_column_names, drivername):
         ]
         other_columns = [
             Column(col, infer_db_type(value, drivername))
-            for col, value in record.iteritems()
+            #for col, value in record.iteritems()
+            for col, value in record.items()
             if col not in primary_key_column_names
         ]
     else:
